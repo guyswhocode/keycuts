@@ -1,3 +1,10 @@
 body {
-    background: #EEE;
+  background: #eee;
+}
+
+#text-container span {
+  background: #ccc;
+  padding: 4px;
+  margin: 0px 5px;
+  border-radius: 5px;
 }
