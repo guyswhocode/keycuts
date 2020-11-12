@@ -1,2 +1,2 @@
-# keycuts
+# Keycuts
 Keyboard shortcuts on steriods !
