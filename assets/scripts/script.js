@@ -14,11 +14,19 @@ const appsList = [
 document.addEventListener("keydown", function (event) {
   event.preventDefault();
   event.stopPropagation();
-  writeToDocument(event.key);
+  if (event.key === "Escape") {
+    textContainer.innerHTML = "";
+  } else {
+    writeToDocument(event.key);
+  }
 });
 
 function writeToDocument(text) {
-  textContainer.innerHTML = text;
+  const node = document.createElement("span");
+  const textnode = document.createTextNode(text);
+
+  node.appendChild(textnode);
+  textContainer.appendChild(node);
 }
 
 async function fetchData(path) {
