@@ -1,13 +1,12 @@
 [
-    {
-      "key": "",
-      "command": "",
-      "description": "",
-      "args": { "text": "" },
-      "when": "",
-      "version": "",
-      "application": "",
-      "category": ""
-    }
-  ]
-  
+  {
+    "application": "Sublime Text",
+    "category": "",
+    "version": "",
+    "key": "",
+    "command": "",
+    "description": "",
+    "args": { "text": "" },
+    "when": ""
+  }
+]

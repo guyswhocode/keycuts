@@ -1,12 +1,12 @@
 [
   {
+    "application": "VS Code",
+    "category": "",
+    "version": "",
     "key": "",
     "command": "",
     "description": "",
     "args": { "text": "" },
-    "when": "",
-    "version": "",
-    "application": "",
-    "category": ""
+    "when": ""
   }
 ]
