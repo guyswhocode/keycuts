@@ -8,3 +8,10 @@ body {
   margin: 0px 5px;
   border-radius: 5px;
 }
+
+.container {
+    min-height: 100vh;
+    display: flex;
+      justify-content: center;
+    align-items: center;
+}
