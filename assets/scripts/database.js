@@ -9,10 +9,10 @@ const appsList = [
   },
 ];
 
+let keyMapCollection = {};
+
 function getShortCutByKeys(keys) {
-  return {
-          
-  };
+  return keyMapCollection[keys];
 }
 
 async function fetchData(path) {
@@ -29,4 +29,8 @@ const promises = appsList.map((app) => {
   (await Promise.all(promises)).map((keymap) => {
     keymaps = keymaps.concat(keymap);
   });
+
+  keymaps.map(keymap => {
+    keyMapCollection[keymap.key] = keymap;
+  })
 })();
