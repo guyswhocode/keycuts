@@ -16,10 +16,11 @@ document.addEventListener("keydown", function (event) {
       if (isComboPress(event)) {
         keyComb.push("+");
       }
-      keyComb.push(event.key);
+      pushKey(event.key);
     }
   }
-  textContainer.innerHTML = keyComb.join(" ");
+  let shortCutDetails = getShortCutByKeys(keyComb.join("").toLowerCase());
+  textContainer.innerHTML = shortCutDetails ? `${shortCutDetails.description} in ${shortCutDetails.application}` : '';
 });
 
 function isComboPress(keyDownEvent) {
@@ -33,6 +34,13 @@ function isComboPress(keyDownEvent) {
     return true;
   }
   return false;
+}
+
+function pushKey(key) {
+  const keyMap = {
+    Control: "ctrl",
+  };
+  keyComb.push(keyMap[key] || key);
 }
 
 function writeToDocument(text) {
