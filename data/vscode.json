@@ -5,7 +5,7 @@
     "version": "",
     "key": "ctrl+shift+l",
     "command": "",
-    "description": "Select all occurences of selected text.",
+    "description": "Select all occurences of selected text",
     "args": { "text": "" },
     "when": ""
   }
