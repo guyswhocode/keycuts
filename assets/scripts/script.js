@@ -1,25 +1,39 @@
 const textContainer = document.getElementById("text-container");
-
-const appsList = [
-  {
-    title: "",
-    fileName: "vscode.json",
-  },
-  {
-    title: "",
-    fileName: "sublime-text.json",
-  },
-];
+const keyComb = [];
+let modifierKeyPressed = false;
 
 document.addEventListener("keydown", function (event) {
   event.preventDefault();
   event.stopPropagation();
-  if (event.key === "Escape") {
-    textContainer.innerHTML = "";
-  } else {
-    writeToDocument(event.key);
+
+  switch (event.key) {
+    case "Escape": {
+      keyComb.length = 0;
+      textContainer.innerHTML = "";
+      break;
+    }
+    default: {
+      if (isComboPress(event)) {
+        keyComb.push("+");
+      }
+      keyComb.push(event.key);
+    }
   }
+  textContainer.innerHTML = keyComb.join(" ");
 });
+
+function isComboPress(keyDownEvent) {
+  if (
+    (event.key === "Shift" && (event.altKey || event.ctrlKey)) ||
+    (event.key === "Control" && (event.altKey || event.shiftKey)) ||
+    (event.key === "Alt" && (event.shiftKey || event.ctrlKey)) ||
+    (!["Shift", "Alt", "Control"].includes(event.key) &&
+      (event.altKey || event.shiftKey || event.ctrlKey))
+  ) {
+    return true;
+  }
+  return false;
+}
 
 function writeToDocument(text) {
   const node = document.createElement("span");
@@ -28,19 +42,3 @@ function writeToDocument(text) {
   node.appendChild(textnode);
   textContainer.appendChild(node);
 }
-
-async function fetchData(path) {
-  const response = await fetch(path);
-  return await response.json();
-}
-
-const promises = appsList.map((app) => {
-  return fetchData(`data/${app.fileName}`);
-});
-
-(async () => {
-  let keymaps = [];
-  (await Promise.all(promises)).map((keymap) => {
-    keymaps = keymaps.concat(keymap);
-  });
-})();
