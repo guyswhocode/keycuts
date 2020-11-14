@@ -1,11 +1,11 @@
 [
   {
     "application": "VS Code",
-    "category": "",
+    "category": "Selection",
     "version": "",
-    "key": "",
+    "key": "ctrl+shift+l",
     "command": "",
-    "description": "",
+    "description": "Select all occurences of selected text.",
     "args": { "text": "" },
     "when": ""
   }

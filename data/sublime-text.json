@@ -1,11 +1,21 @@
 [
   {
     "application": "Sublime Text",
-    "category": "",
+    "category": "Selection",
     "version": "",
-    "key": "",
+    "key": "alt+left",
     "command": "",
-    "description": "",
+    "description": "Select all occurences",
+    "args": { "text": "" },
+    "when": ""
+  },
+  {
+    "application": "Sublime Text",
+    "category": "Selection",
+    "version": "",
+    "key": "ctrl+d",
+    "command": "",
+    "description": "Select next occurence of selected text",
     "args": { "text": "" },
     "when": ""
   }
