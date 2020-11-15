@@ -20,7 +20,7 @@ document.addEventListener("keydown", function (event) {
     }
   }
   let shortCutDetails = getShortCutByKeys(keyComb.join("").toLowerCase());
-  textContainer.innerHTML = shortCutDetails ? `${shortCutDetails.description} in ${shortCutDetails.application}` : '';
+  textContainer.innerHTML = shortCutDetails ? `${shortCutDetails.description} in ${shortCutDetails.application}` : keyComb.join(" ");
 });
 
 function isComboPress(keyDownEvent) {
