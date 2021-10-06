@@ -8,5 +8,15 @@
     "description": "Select all occurences of selected text",
     "args": { "text": "" },
     "when": ""
+  },
+  {
+    "application": "VS Code",
+    "category": "Selection",
+    "version": "",
+    "key": "ctrl+d",
+    "command": "",
+    "description": "Select the next occurance of selected text",
+    "args": { "text": "" },
+    "when": ""
   }
 ]
