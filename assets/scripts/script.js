@@ -10,16 +10,20 @@ document.addEventListener("keydown", function (event) {
     case "Escape": {
       keyComb.length = 0;
       textContainer.innerHTML = "";
+
       break;
     }
+
     default: {
       if (isComboPress(event)) {
         keyComb.push("+");
       }
+
       pushKey(event.key);
     }
   }
   let shortCutDetails = getShortCutByKeys(keyComb.join("").toLowerCase());
+
   textContainer.innerHTML = shortCutDetails ? `${shortCutDetails.description} in ${shortCutDetails.application}` : keyComb.join(" ");
 });
 
@@ -31,8 +35,10 @@ function isComboPress(keyDownEvent) {
     (!["Shift", "Alt", "Control"].includes(event.key) &&
       (event.altKey || event.shiftKey || event.ctrlKey))
   ) {
+
     return true;
   }
+
   return false;
 }
 
@@ -40,6 +46,7 @@ function pushKey(key) {
   const keyMap = {
     Control: "ctrl",
   };
+
   keyComb.push(keyMap[key] || key);
 }
 
